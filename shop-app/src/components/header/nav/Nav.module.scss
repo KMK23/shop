@@ -1,0 +1,64 @@
+@import "../../../mixins.scss";
+.nav {
+  ul {
+    display: flex;
+    gap: 20px;
+  }
+  li {
+    font-size: 20px;
+
+    a {
+      @include hover-effect(blue);
+    }
+  }
+  @media (min-width: 768px) {
+    li {
+      font-size: 25px;
+    }
+  }
+}
+.counter {
+  position: relative;
+  b {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #997878;
+    color: #fff;
+    font-size: 9px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    top: -11px;
+    right: -14px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.nav_hover_cart {
+  display: none;
+
+  @media (min-width: 990px) {
+    width: 450px;
+    min-height: 100px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: 0.1s all ease-in-out;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.nav li:hover .nav_hover_cart {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav_sign_out {
+  cursor: pointer;
+
+  @include hover-effect(blue);
+}
